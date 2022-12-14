@@ -10,7 +10,8 @@ const BookingForm = ({addBooking}) => {
     })
 
     const onChange = (e) => {
-        const newFormData = Object.assign({}, formData);
+        const newFormData = Object.assign({}, formData); // {} gets filled with formData
+        // console.log(e)
         newFormData[e.target.name] = e.target.value;
         setFormData(newFormData);
     } 
