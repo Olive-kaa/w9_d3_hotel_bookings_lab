@@ -24,7 +24,8 @@ const BookingForm = ({addBooking}) => {
 
         setFormData({
             name: "",
-            emailAddress: ""
+            emailAddress: "",
+            checkedIn: false
         })
     }
 

@@ -60,6 +60,7 @@ const createRouter = function (collection) {  // for collection go to server.js
     router.put('/:id', (req, res) => {
       const id = req.params.id;
       const updatedData = req.body
+      console.log("object:", updatedData)
       collection
       .updateOne({_id: ObjectID(id)}, {$set: updatedData})
       .then((doc) => res.json(doc))

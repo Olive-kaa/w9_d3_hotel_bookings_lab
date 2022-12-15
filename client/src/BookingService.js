@@ -22,10 +22,12 @@ export const deleteBooking = (id) => {
 }
 
 export const updateBooking = (id, updateData) => {
-    delete updateData._id;
+    const copiedBooking = {...updateData};
+    copiedBooking.checkedIn = copiedBooking.checkedIn ? false : true;
+    delete copiedBooking._id;
     return fetch(baseURL + id, {
         method: 'PUT',
-        body: JSON.stringify(updateData),
+        body: JSON.stringify(copiedBooking),
         headers: {'Content-Type': 'application/json'}
     })
     .then(res => res.json())

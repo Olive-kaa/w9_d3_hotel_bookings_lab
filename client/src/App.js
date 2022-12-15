@@ -31,7 +31,7 @@ function App() {
   const updateCheckIn = (id) => {
     const updatedList = hotelBookings.map(b => b);
     const indexToUpdate = updatedList.map(b => b._id).indexOf(id);
-    updatedList[indexToUpdate].checkedIn = true;
+    updatedList[indexToUpdate].checkedIn = updatedList[indexToUpdate].checkedIn ? false : true;
     setHotelBookings(updatedList);
   }
 
